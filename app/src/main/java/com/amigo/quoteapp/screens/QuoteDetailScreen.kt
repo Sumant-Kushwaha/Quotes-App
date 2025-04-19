@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -59,7 +60,7 @@ fun QuoteDetail(quote: Quote) {
                         .size(48.dp)
                 )
                 Text(
-                    quote.text,
+                    quote.quote,
                     fontSize = 30.sp,
                     fontFamily = FontFamily(Font(R.font.simpleday)),
                     color=Color.Black
@@ -73,6 +74,7 @@ fun QuoteDetail(quote: Quote) {
                     )
                     Text(
                         quote.author,
+                        textDecoration = TextDecoration.Underline,
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )

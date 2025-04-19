@@ -1,6 +1,6 @@
 package com.amigo.quoteapp.models
 
 data class Quote (
-    val text: String,
+    val quote: String,
     val author: String
 )

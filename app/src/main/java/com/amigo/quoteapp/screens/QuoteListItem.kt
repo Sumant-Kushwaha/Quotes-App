@@ -22,7 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,7 +68,7 @@ fun QuoteListItem(quote: Quote, onClick: (quote: Quote) -> Unit) {
                     shape = RoundedCornerShape(10.dp),
                 ) {
                     Text(
-                        quote.text,
+                        quote.quote,
                         textAlign = TextAlign.Center,
                         style = MaterialTheme.typography.headlineMedium,
                         fontSize = 15.sp,
@@ -84,6 +86,7 @@ fun QuoteListItem(quote: Quote, onClick: (quote: Quote) -> Unit) {
                         Text("Author : ")
                         Text(
                             quote.author,
+                            textDecoration = TextDecoration.Underline,
                             style = MaterialTheme.typography.bodyMedium
                         )
                     }

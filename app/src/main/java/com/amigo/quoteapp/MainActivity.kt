@@ -11,7 +11,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,12 +22,20 @@ class MainActivity : ComponentActivity() {
             App()
         }
     }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (DataManager.currentPage.value == Pages.Details) {
+            DataManager.switchPages(null)
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
 
 @Composable
 fun App() {
     if (DataManager.isDataLoaded.value) {
-
         if (DataManager.currentPage.value == Pages.Listing) {
             QuoteListScreen(data = DataManager.data) {
                 DataManager.switchPages(it)
